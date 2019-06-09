@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2019 at 05:07 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Jun 09, 2019 at 04:36 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `petsitter`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `caretaker`
+--
+
+CREATE TABLE `caretaker` (
+  `id` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `expertise_pet1` varchar(20) NOT NULL,
+  `expertise_pet2` varchar(20) DEFAULT NULL,
+  `emailid` text NOT NULL,
+  `experience` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `caretaker`
+--
+
+INSERT INTO `caretaker` (`id`, `Name`, `expertise_pet1`, `expertise_pet2`, `emailid`, `experience`) VALUES
+(1, 'Amratanshu', 'dog', 'cat', 'amru@gmail.com', 5),
+(2, 'jon', 'dog', NULL, 'jon@gmail.com', 7),
+(3, 'tom', 'cat', 'bird', 'tom@gmail.com', 3),
+(4, 'sins', 'cat', 'bird', 'sins@gmail.com', 4),
+(5, 'ann', 'dog', 'cat', 'ann@gmail.com', 3),
+(6, 'julie', 'dog', '', 'julie@gmail.com', 4),
+(7, 'dwarika', 'cat', '', 'daru@gmail.com', 6),
+(8, 'madua', 'cat', '', 'madua@gmail.com', 4),
+(9, 'brand', 'dog', 'cat', 'brand@gmail.com', 2),
+(11, 'jim', 'bird', NULL, 'jim@gmail.com', 4),
+(12, 'tonny', 'rabbit', 'bird', 'ton@gmail.com', 4);
 
 -- --------------------------------------------------------
 
@@ -101,6 +133,12 @@ INSERT INTO `dog` (`customer_id`, `dog_id`, `breed`, `weight`, `photo`) VALUES
 --
 
 --
+-- Indexes for table `caretaker`
+--
+ALTER TABLE `caretaker`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `cat`
 --
 ALTER TABLE `cat`
@@ -123,6 +161,12 @@ ALTER TABLE `dog`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `caretaker`
+--
+ALTER TABLE `caretaker`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `cat`
